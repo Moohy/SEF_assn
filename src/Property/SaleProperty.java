@@ -3,58 +3,40 @@ package Property;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import Customer.Seller;
 import Offer.Offer;
+import Sale.Sale;
 
 public class SaleProperty extends Property {
 
 	private double commissionRate = 0;
 	private double minPrice;
-	
+	private Seller seller;
+	private Sale sale;
 	private Collection<Offer> offers;
 	
-//	boolean offerAcceptance = false;
-//	boolean buyerNotWithdraw = true;
-//	boolean deposit= false;
 	
-	
-	public SaleProperty(String address, String suburb, int bedroom, int bathroom, int spaces, PropertyType PT, double minPrice) {
+	public SaleProperty(String address, String suburb, int bedroom, int bathroom, int spaces, PropertyType PT, double minPrice, Seller seller) {
 		super(address, suburb, bedroom, bathroom, spaces, PT);
+		
+		this.seller = seller;
+		
+		this.sale = null;
 		
 		this.minPrice = minPrice;
 		
 		this.offers = new ArrayList<Offer>();
 	}
-
-//	
-//	public double commission(double commission) {
-//		if(commission > .05 || commission < .02)
-//			return this.commission;
-//		this.commission = commission;
-//		return this.commission;
-//	}
 	
-//	public boolean compilingSection32() {
-//		return true;
-//	}
-//	
-//	public double vendorsMinPrice() {
-//		return 50000;
-//	}
-//	
-//	public boolean isOfferAccepted(int numDaysSinceInspection, boolean isAccepted) {
-//		if(numDaysSinceInspection <= 3 && isAccepted)
-//			offerAcceptance = true;
-//		return offerAcceptance && buyerNotWithdraw;
-//		
-//	}
-//	
-//	public boolean receivedDeposit(boolean isReceived) {
-//		if(offerAcceptance && isReceived)
-//			deposit = true;
-//		return deposit;
-//	}
+	public void setSale(Sale sale) {
+		this.sale = sale;
+	}
 	
-	public ArrayList getOffers() {
+	public Sale getSale() {
+		return this.sale;
+	}
+	
+	public ArrayList<Offer> getOffers() {
 		return (ArrayList) this.offers;
 	}
 	
@@ -64,6 +46,15 @@ public class SaleProperty extends Property {
 	
 	public int numberOfOffer() {
 		return offers.size();
+	}
+	
+	public int numberOfValidOffer() {
+		int counter = 0;
+		for(Offer offer: offers) {
+			if(!offer.isWithdraw())
+				counter++;
+		}
+		return counter;
 	}
 	
 	public double minPrice() {

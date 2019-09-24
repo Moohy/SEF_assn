@@ -1,11 +1,13 @@
 package Offer;
 
+import Customer.Buyer;
 import Property.Property;
 import Property.SaleProperty;
 
 public class Offer {
 	
-//	private SaleProperty sp;
+	private SaleProperty sp;
+	private Buyer b;
 	private double price;
 	private int date;
 	private int acceptedDate;
@@ -15,9 +17,10 @@ public class Offer {
 	private boolean isWithdraw = false;
 
 
-	public Offer(double price) {
+	public Offer(double price, SaleProperty sp, Buyer b) {
 		this.price = price;
-//		this.sp = sp;
+		this.sp = sp;
+		this.b =b;
 		this.date = 0;
 		this.offerTimer = 0; 
 	}
