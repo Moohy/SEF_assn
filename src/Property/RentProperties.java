@@ -43,6 +43,7 @@ public class RentProperties {
 	}
 	
 	public boolean receivedBond(boolean isReceived) {
+		appAcceptance = true; //TODO should not do this
 		if(appAcceptance && isReceived)
 			bond = true;
 		return bond;

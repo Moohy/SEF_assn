@@ -20,10 +20,24 @@ public class PropertyTests {
 	}
 
 	@Test
-	public void editProperty() {
+	public void editCarSpace() {
 		assertNotEquals(1, property1.getCarSpaceNum());
 		property1.setCarSpaceNum(1);
 		assertEquals(1, property1.getCarSpaceNum());
+	}
+
+	@Test
+	public void editBathsNum() {
+		assertNotEquals(2, property1.getNumOfBathroom());
+		property1.setNumOfBathroom(2);
+		assertEquals(2, property1.getNumOfBathroom());
+	}
+
+	@Test
+	public void editBedsNum() {
+		assertNotEquals(3, property1.getNumOfBedroom());
+		property1.setNumOfBedroom(3);
+		assertEquals(3, property1.getNumOfBedroom());
 	}
 
 }

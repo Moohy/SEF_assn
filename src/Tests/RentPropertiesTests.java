@@ -23,17 +23,24 @@ public class RentPropertiesTests {
 		
 		rp.negotiateFee();
 		assertNotEquals(8, rp.managementFee());
+		assertEquals(6, rp.managementFee());
 	}
 	
 	@Test
 	public void offerAcceptAfterDueDate() {
+		//TODO acceptApplication function needs work after classes are done
 		assertFalse(rp.acceptApplication(4, true));
 	}
 
 	
 	@Test
 	public void offerAcceptDuringDueDate() {
+		//TODO acceptApplication function needs work after classes are done
 		assertTrue(rp.acceptApplication(2, true));
 	}
-
+	
+	@Test
+	public void paiedBond() {
+		assertTrue(rp.receivedBond(true));
+	}
 }

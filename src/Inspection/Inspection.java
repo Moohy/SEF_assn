@@ -7,14 +7,16 @@ public class Inspection {
 	private int empId;
 	private Property property;
 	private String date;
-	private String time;
+	private String start;
+	private String end;
 	private boolean status;
 
-	public Inspection(int empId, Property property, String date, String time) {
-		this.empId = empId;
+	public Inspection(Property property, String date, String start, String end) {
+//		this.empId = empId;
 		this.property = property;
 		this.date = date;
-		this.time = time;
+		this.start = start;
+		this.end = end;
 		this.status = true;
 	}
 

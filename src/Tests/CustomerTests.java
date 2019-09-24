@@ -38,5 +38,4 @@ public class CustomerTests {
 		suburbs = (ArrayList<String>) customer2.getSuburbs();
 		assertNull(suburbs);
 	}
-
 }

@@ -1,24 +1,35 @@
 package Property;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import Inspection.Inspection;
+
 public class Property {
 	
+	private int id;
 	private String address;
 	private String suburb;
-	private int numOfBedroom;
-	private int numOfBathroom;
-	private int carSpace;
-	private PropertyType PT;
+	private int bedroom;
+	private int bathroom;
+	private int spaces;
+	private PropertyType pt;
+	private Collection<String> documents;
+	private Collection<Inspection> inspections;
 
 
-	public Property(String address, String suburb, int numOfBedroom, int numOfBathroom, int carSpace,
+	public Property(String address, String suburb, int bedroom, int bathroom, int spaces,
 			PropertyType PT) {
 
 		this.address = address;
 		this.suburb = suburb;
-		this.numOfBedroom = numOfBedroom;
-		this.numOfBathroom = numOfBathroom;
-		this.carSpace = carSpace;
-		this.PT = PT;
+		this.bedroom = bedroom;
+		this.bathroom = bathroom;
+		this.spaces = spaces;
+		this.pt = pt;
+		
+		documents = new ArrayList<String>();
+		inspections = new ArrayList<Inspection>();
 	}
 
 
@@ -43,42 +54,58 @@ public class Property {
 
 
 	public int getNumOfBedroom() {
-		return numOfBedroom;
+		return bedroom;
 	}
 
 
-	public void setNumOfBedroom(int numOfBedroom) {
-		this.numOfBedroom = numOfBedroom;
+	public void setNumOfBedroom(int bedroom) {
+		this.bedroom = bedroom;
 	}
 
 
 	public int getNumOfBathroom() {
-		return numOfBathroom;
+		return bathroom;
 	}
 
 
-	public void setNumOfBathroom(int numOfBathroom) {
-		this.numOfBathroom = numOfBathroom;
+	public void setNumOfBathroom(int bathroom) {
+		this.bathroom = bathroom;
 	}
 
 
-	public int getCarSpaceNum() {
-		return carSpace;
+	public int getNumOfCarSpace() {
+		return spaces;
 	}
 
 
-	public void setCarSpaceNum(int carSpace) {
-		this.carSpace = carSpace;
+	public void setNumOfCarSpace(int spaces) {
+		this.spaces = spaces;
 	}
 
 
 	public PropertyType getPT() {
-		return PT;
+		return pt;
 	}
 
 
 	public void setPT(PropertyType pT) {
-		PT = pT;
+		pt = pT;
+	}
+	
+	public void addDocument(String doc){
+		this.documents.add(doc);
+	}
+	
+	public void createIspection(String date, String start, String end) {
+		Inspection i = new Inspection(this, date, start, end);
+	}
+	
+	public void removeInspection(Inspection insp) {
+		inspections.remove(insp);
+	}
+	
+	public void cancelInspections() {
+		inspections.removeAll(inspections);
 	}
 	
 
