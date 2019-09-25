@@ -29,7 +29,7 @@ public class SalePropertyTests {
 	}
 
 	
-	//negative
+	//invalid
 	@Test
 	public void testInvalidOfferAcceptanceAfterDueDate() {
 		// add property
@@ -57,7 +57,7 @@ public class SalePropertyTests {
 	}
 
 	
-	//positive
+	//valid
 	@Test
 	public void testValidOfferAcceptanceDuringDueDate() {
 		// add property
@@ -80,7 +80,7 @@ public class SalePropertyTests {
 		assertTrue(Mohammed.answerOffer(offer, true));
 	}
 	
-	//negative
+	//invalid
 	@Test
 	public void testInvalidOfferAcceptanceAfterCustumerWithdraw() {
 		// add property
@@ -126,7 +126,7 @@ public class SalePropertyTests {
 		
 	}
 	
-	//negative
+	//invalid
 	@Test
 	public void testInvalidOfferAcceptancePriceBelowMinimum() {
 		// add property
@@ -144,9 +144,9 @@ public class SalePropertyTests {
 	}
 	
 	
-	//positive
+	//valid
 	@Test
-	public void testValidOfferAcceptancePriceHigherThanMinimum() {
+	public void testValidOfferPriceEqualOrHigherThanMinimum() {
 		// add property
 		SaleProperty property = Mohammed.addProperty("000 Collins St", "Docklands", 1, 1, 0, PropertyType.unit, (double) 3000);
 		

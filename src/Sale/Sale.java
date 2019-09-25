@@ -3,6 +3,7 @@ package Sale;
 import java.util.Collection;
 
 import Customer.*;
+import Employee.SaleConsultant;
 import Property.SaleProperty;
 import Offer.*;
 
@@ -10,6 +11,7 @@ public class Sale {
 	
 	SaleProperty p;
 	Buyer b;
+	SaleConsultant saleConsultant;
 	int price;
 	double commissoinRate;
 	double bonusRate;
