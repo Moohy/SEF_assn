@@ -12,21 +12,26 @@ public class Sale {
 	SaleProperty p;
 	Buyer b;
 	SaleConsultant saleConsultant;
-	int price;
-	double commissoinRate;
-	double bonusRate;
+	double price;
+	double commisionRate;
+	double bonusRate =.40;
 	String saleDate;
 
-	public Sale() {
-		// TODO Auto-generated constructor stub
+	public Sale(SalesConsultant emp, SaleProperty property, Buyer buyer, String date, double price, double commisionRate) {
+		p = property;
+		b = buyer;
+		saleConsultant = emp;
+		saleDate = date;
+		this.price = price;
+		this.commisionRate = commisionRate;	
 	}
 	
-	public double calcBonus() {
-		return 0.0;
+	public double calculateBonus() {
+		return bonusRate * calculateCommission();
 	}
 	
-	public double calcCommission() {
-		return 0.0;
+	public double calculateCommission() {
+		return price * commisionRate;
 	}
 
 }

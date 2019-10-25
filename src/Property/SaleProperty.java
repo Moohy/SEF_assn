@@ -3,17 +3,19 @@ package Property;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import Branch.Branch;
 import Customer.Seller;
 import Offer.Offer;
 import Sale.Sale;
 
 public class SaleProperty extends Property {
 
-	private double commissionRate = 0;
 	private double minPrice;
 	private Seller seller;
 	private Sale sale;
 	private Collection<Offer> offers;
+	private boolean isSold = false;
+	private Branch b;
 	
 	
 	public SaleProperty(String address, String suburb, int bedroom, int bathroom, int spaces, PropertyType PT, double minPrice, Seller seller) {
@@ -26,6 +28,8 @@ public class SaleProperty extends Property {
 		this.minPrice = minPrice;
 		
 		this.offers = new ArrayList<Offer>();
+		
+		b = new Branch();
 	}
 	
 	public void setSale(Sale sale) {
@@ -59,6 +63,18 @@ public class SaleProperty extends Property {
 	
 	public double minPrice() {
 		return minPrice;
+	}
+	
+	public boolean isSold() {
+		return isSold;
+	}
+	
+	public void sold() {
+		isSold = true;
+	}
+	
+	public String toString() {
+		return address+", " +suburb+", " +bedroom+", " +bathroom+", " +spaces;
 	}
 	
 }

@@ -8,11 +8,11 @@ import Inspection.Inspection;
 public class Property {
 	
 	private int id;
-	private String address;
-	private String suburb;
-	private int bedroom;
-	private int bathroom;
-	private int spaces;
+	protected String address;
+	protected String suburb;
+	protected int bedroom;
+	protected int bathroom;
+	protected int spaces;
 	private PropertyType pt;
 	private Collection<String> documents;
 	private Collection<Inspection> inspections;

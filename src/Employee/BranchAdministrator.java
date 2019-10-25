@@ -9,8 +9,8 @@ public class BranchAdministrator extends Employee {
 
 	}
 	
-	public void runPayroll() {
-		
+	public void runPayroll(String date) {
+		branch.runPayroll(date);
 	}
 	
 	public void addDocuments(String doc) {

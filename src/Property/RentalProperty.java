@@ -10,7 +10,7 @@ public class RentalProperty extends Property {
 
 	public RentalProperty(String address, String suburb, int bedroom, int bathroom, int spaces, PropertyType PT) {
 		super(address, suburb, bedroom, bathroom, spaces, PT);
-		// TODO Auto-generated constructor stub
+
 	}
 
 

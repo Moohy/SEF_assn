@@ -4,14 +4,14 @@ import Branch.Branch;
 
 public class Employee {
 	
-	private Branch branch;
+	protected Branch branch;
 	private int id;
 	private String name;
 	private String email;
 	private double salary;
 	private boolean isPartTime;
 	private double hours;
-	private double hoursApproved;
+	protected boolean hoursApproved;
 	
 	public Employee(int id, String name, String email, double salary, boolean isPartTime, Branch branch) {
 		super();

@@ -10,11 +10,11 @@ public class BranchManager extends Employee {
 
 	}
 	
-	public void assignEmployee(Property property, Employee employee) {
-		
+	public void assignEmployee(Property property, SaleConsultant employee) {
+		employee.addSaleProperty((SaleProperty) property);
 	}
 
 	public void approvedHours(Employee employee) {
-		
+		employee.hoursApproved = true;
 	}
 }
